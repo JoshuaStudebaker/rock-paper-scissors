@@ -41,7 +41,6 @@ function play(playerChoice) {
   let wins = winner(choice, opponent);
 
   return wins;
-  // return choice;
 }
 
 function foe() {
@@ -74,6 +73,7 @@ function winner(choice, computerChoice) {
   }
 
   let display = "You have " + outcome + "!";
+  let display2 = `You have ${outcome}!`;
 
-  element.innerHTML = display;
+  element.innerHTML = display2;
 }
