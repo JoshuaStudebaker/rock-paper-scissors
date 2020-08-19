@@ -3,48 +3,38 @@ let tools = [
     name: "Rock",
     beats: "Scissors",
     loses: "Paper",
-    icon: "fas fa-hand-rock"      
+    icon: "fas fa-hand-rock",
   },
   {
     name: "Paper",
     beats: "Rock",
     loses: "Scissors",
-    icon: "fas fa-hand-paper"
+    icon: "fas fa-hand-paper",
   },
   {
     name: "Scissors",
     beats: "Paper",
     loses: "Rock",
-    icon: "fas fa-hand-scissors"
-  }
-  
+    icon: "fas fa-hand-scissors",
+  },
 ];
 
-// function drawButtons() {
+function play(playerChoice) {
+  let toolIndexNumber = 0;
+  let choice = tools[toolIndexNumber];
+  switch (playerChoice) {
+    case "rock":
+      toolIndexNumber = 0;
+      break;
+    case "paper":
+      toolIndexNumber = 1;
+      break;
+    case "scissors":
+      toolIndexNumber = 2;
+  }
 
-//   let buttonInput = ""
-    
-//   for (let i = 0; i < tools.length; i++){
-//     let toolObject = tools[i]
-//   buttonInput += `<button type="button" class="btn ${tool.name}" onclick="play('${tool.name}')">${tool.name}</button>`
-//   }
-  
-//   document.getElementById("buttons").innerHTML = buttonInput
-  
-// }
-
-
-// function play(playerChoice) { 
-  
-// }
-
-
-
-// if (playerChoice = Rock){
-//    opponent(playerChoice);
-//      if (opponent == Scissors){
-//          return "You win"
-//        }
+  return (choice = tools[toolIndexNumber]);
+}
 
 function foe() {
   let computerChoice = "";
@@ -57,23 +47,30 @@ function foe() {
   } else {
     computerChoice = "Scissors";
   }
-  return computerChoice
+  return computerChoice;
 }
 
-function win() {
-  
-}
+//
+// function drawButtons() {
 
-function winner() {
-  play();
-  foe();
+//   let buttonInput = ""
 
-  if (play() == "Rock" && foe() == "Scissors") || (play() == "Paper" && foe() == "Rock") || 
-}
+//   for (let i = 0; i < tools.length; i++){
+//     let toolObject = tools[i]
+//   buttonInput += `<button type="button" class="btn ${tool.name}" onclick="play('${tool.name}')">${tool.name}</button>`
+//   }
 
+//   document.getElementById("buttons").innerHTML = buttonInput
 
+// }
 
+// function play(playerChoice) {
 
+// }
 
-// 
+// if (playerChoice = Rock){
+//    opponent(playerChoice);
+//      if (opponent == Scissors){
+//          return "You win"
+//        }
 // drawButtons()
