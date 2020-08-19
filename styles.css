@@ -1,0 +1,17 @@
+.btn-rock {
+  background-color: darkgrey;
+  color: black;
+  border: 2px solid black;
+}
+
+.btn-paper {
+  background-color: ivory;
+  color: black;
+  border: 2px solid black;
+}
+
+.btn-scissors {
+  background-color: green;
+  color: silver;
+  border: 2px solid silver;
+}
