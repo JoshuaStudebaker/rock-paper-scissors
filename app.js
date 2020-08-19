@@ -20,7 +20,6 @@ let tools = [
 ];
 
 function play(playerChoice) {
-  debugger;
   let toolIndexNumber = 0;
 
   switch (playerChoice) {
@@ -35,12 +34,13 @@ function play(playerChoice) {
   }
 
   let choice = tools[toolIndexNumber];
-  console.log(choice);
+  document.getElementById("yourChoice").innerHTML =
+    "You have chosen " + choice.name + "!";
   let opponent = foe();
-  console.log(opponent);
+
   let wins = winner(choice, opponent);
-  console.log(wins);
-  return winner;
+
+  return wins;
   // return choice;
 }
 
@@ -56,21 +56,24 @@ function foe() {
     computerChoice = "Scissors";
   }
 
-  console.log(computerChoice);
+  document.getElementById("computerChoice").innerHTML =
+    "Your opponent has chosen " + computerChoice + "!";
   return computerChoice;
 }
 
 function winner(choice, computerChoice) {
-  let result = "";
+  let outcome = "";
+  let element = document.getElementById("resultsDisplay");
 
   if (choice.beats == computerChoice) {
-    result = "win";
+    outcome = "won";
   } else if (choice.loses == computerChoice) {
-    result = "lose";
+    outcome = "lost";
   } else {
-    result = "ties";
+    outcome = "tied";
   }
 
-  console.log(result);
-  return result;
+  let display = "You have " + outcome + "!";
+
+  element.innerHTML = display;
 }
