@@ -20,8 +20,9 @@ let tools = [
 ];
 
 function play(playerChoice) {
+  debugger;
   let toolIndexNumber = 0;
-  let choice = tools[toolIndexNumber];
+
   switch (playerChoice) {
     case "rock":
       toolIndexNumber = 0;
@@ -33,44 +34,43 @@ function play(playerChoice) {
       toolIndexNumber = 2;
   }
 
-  return (choice = tools[toolIndexNumber]);
+  let choice = tools[toolIndexNumber];
+  console.log(choice);
+  let opponent = foe();
+  console.log(opponent);
+  let wins = winner(choice, opponent);
+  console.log(wins);
+  return winner;
+  // return choice;
 }
 
 function foe() {
   let computerChoice = "";
-  let choiceId = Math.floor(Math.random() * 4);
+  let choiceId = Math.floor(Math.random() * 3 + 1);
 
-  if ((choiceId = 1)) {
+  if (choiceId == 1) {
     computerChoice = "Rock";
-  } else if ((choiceId = 2)) {
+  } else if (choiceId == 2) {
     computerChoice = "Paper";
   } else {
     computerChoice = "Scissors";
   }
+
+  console.log(computerChoice);
   return computerChoice;
 }
 
-//
-// function drawButtons() {
+function winner(choice, computerChoice) {
+  let result = "";
 
-//   let buttonInput = ""
+  if (choice.beats == computerChoice) {
+    result = "win";
+  } else if (choice.loses == computerChoice) {
+    result = "lose";
+  } else {
+    result = "ties";
+  }
 
-//   for (let i = 0; i < tools.length; i++){
-//     let toolObject = tools[i]
-//   buttonInput += `<button type="button" class="btn ${tool.name}" onclick="play('${tool.name}')">${tool.name}</button>`
-//   }
-
-//   document.getElementById("buttons").innerHTML = buttonInput
-
-// }
-
-// function play(playerChoice) {
-
-// }
-
-// if (playerChoice = Rock){
-//    opponent(playerChoice);
-//      if (opponent == Scissors){
-//          return "You win"
-//        }
-// drawButtons()
+  console.log(result);
+  return result;
+}
